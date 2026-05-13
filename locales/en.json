@@ -2,7 +2,7 @@
   "access_denied": "Access denied.",
   "welcome": "<b>Stalwart Event Notification</b>\n\nUse the menu or /subscribe all to start receiving Stalwart event notifications.",
   "menu_hint": "Use the menu buttons or /help to see available commands.",
-  "help": "<b>Commands</b>\n\n/start - Welcome\n/events - List supported events\n/subscribe <event|all> - Subscribe\n/unsubscribe <event|all> - Unsubscribe\n/list - Current subscriptions\n/status - Service status\n/prefs - Preferences\n/lang en|fr|de|es|it - Language\n/timezone Europe/Paris - Timezone\n/short on|off - Short notifications",
+  "help": "<b>Bot help</b>\n\n📋 Events shows the Stalwart events the bot can notify you about.\n📌 My subscriptions shows your active subscriptions.\n➕ Subscribe lets you choose one event to receive.\n➕ Subscribe all subscribes you to every supported event.\n➖ Unsubscribe lets you remove one subscription.\n➖ Unsubscribe all removes all your subscriptions.\n📊 Status shows the service status.\n⚙️ Preferences lets you change language, timezone, and short notifications.\n❓ Help shows this message.",
   "status": "<b>Status</b>\n\nHTTP port: <code>{{port}}</code>\nSubscribers: <code>{{subscribers}}</code>",
   "events.title": "<b>Supported events</b>",
   "list.title": "<b>Your subscriptions</b>",
@@ -23,11 +23,18 @@
   "prefs.short_on": "ON",
   "prefs.short_off": "OFF",
   "prefs.language_prompt": "Choose your language.",
-  "prefs.timezone_prompt": "Choose your timezone or use /timezone <zone>.",
+  "prefs.timezone_prompt": "Choose your timezone or use <code>/timezone &lt;zone&gt;</code>.",
+  "prefs.timezone_invalid": "Invalid timezone: <code>{{timezone}}</code>.",
   "prefs.short_prompt": "Choose short notification mode.",
   "prefs.language_saved": "Language saved: <code>{{locale}}</code>.",
   "prefs.timezone_saved": "Timezone saved: <code>{{timezone}}</code>.",
   "prefs.short_saved": "Short notifications: <code>{{short}}</code>.",
+  "menu.language": "Language",
+  "keyboard.exit": "Exit",
+  "language.title": "🌐Language settings",
+  "language.updated": "The bot's language is now English",
+  "language.invalid": "Unsupported language.",
+  "exit.keyboard_hint": "<i>If the keyboard disappears, send /start.</i>",
   "admin.stats": "<b>Stats</b>\n\nSubscribers: <code>{{subscribers}}</code>\nEvents: <code>{{events}}</code>\nEvents 24h: <code>{{events_24h}}</code>",
   "admin.no_users": "No subscribers found.",
   "admin.users_title": "<b>Users</b>",
@@ -71,4 +78,3 @@
   "event.server.startup.description": "Server starting",
   "event.server.startup-error.description": "Server startup error"
 }
-

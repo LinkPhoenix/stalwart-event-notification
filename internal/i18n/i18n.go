@@ -20,6 +20,7 @@ func Load(dir string, defaultLocale string) (*Bundle, error) {
 	if strings.TrimSpace(defaultLocale) == "" {
 		defaultLocale = "en"
 	}
+	defaultLocale = normalizeLocale(defaultLocale)
 
 	entries, err := os.ReadDir(dir)
 	if err != nil {
@@ -54,7 +55,7 @@ func (b *Bundle) DefaultLocale() string {
 }
 
 func (b *Bundle) Resolve(locale string) string {
-	locale = strings.ToLower(strings.TrimSpace(locale))
+	locale = normalizeLocale(locale)
 	if _, ok := b.catalogs[locale]; ok {
 		return locale
 	}
@@ -80,6 +81,15 @@ func (b *Bundle) T(locale string, key string, params map[string]string) string {
 		value = strings.ReplaceAll(value, "{{"+name+"}}", replacement)
 	}
 	return value
+}
+
+func normalizeLocale(locale string) string {
+	locale = strings.ToLower(strings.TrimSpace(locale))
+	locale = strings.ReplaceAll(locale, "_", "-")
+	if idx := strings.IndexByte(locale, '-'); idx >= 0 {
+		locale = locale[:idx]
+	}
+	return locale
 }
 
 func loadCatalog(path string) (map[string]string, error) {

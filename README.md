@@ -76,7 +76,7 @@ To find your Telegram ID, you can send a message to an ID helper bot such as `@u
 
 | Variable | Description |
 | --- | --- |
-| `DEFAULT_LOCALE` | Default language. Supported values: `en`, `fr`, `de`, `es`, `it`. Default: `en`. |
+| `DEFAULT_LOCALE` | Default language. Supported values: `de`, `en`, `es`, `fr`, `it`, `pt`, `ru`, `uk`. Default: `en`. |
 | `DEFAULT_TIMEZONE` | Default timezone used in notifications. Default: `UTC`. |
 | `LOCALES_DIR` | Directory containing locale JSON files. Default: `locales`. |
 
@@ -133,7 +133,7 @@ Every variable currently supported by `.env.example` is documented below.
 | `WEBHOOK_KEY` | No | Empty | Enables HMAC-SHA256 verification for Stalwart webhook requests. |
 | `WEBHOOK_USERNAME` | No | Empty | Enables Basic Auth username verification for webhook requests. |
 | `WEBHOOK_PASSWORD` | No | Empty | Basic Auth password paired with `WEBHOOK_USERNAME`. |
-| `DEFAULT_LOCALE` | No | `en` | Default bot language. Supported: `en`, `fr`, `de`, `es`, `it`. |
+| `DEFAULT_LOCALE` | No | `en` | Default bot language. Supported: `de`, `en`, `es`, `fr`, `it`, `pt`, `ru`, `uk`. |
 | `DEFAULT_TIMEZONE` | No | `UTC` | Default timezone for formatted notification timestamps. |
 | `LOCALES_DIR` | No | `locales` | Directory containing locale JSON files. |
 | `SUBSCRIPTION_MIN_SEVERITY` | No | `info` | Minimum event severity to send: `info`, `warning`, or `alert`. |
