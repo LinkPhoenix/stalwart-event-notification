@@ -1,0 +1,10 @@
+.env
+*.log
+*.out
+coverage.txt
+dist/
+tmp/
+data/
+.idea/
+.vscode/
+
