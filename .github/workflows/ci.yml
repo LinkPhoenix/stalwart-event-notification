@@ -12,7 +12,6 @@ permissions:
 
 env:
   GO_VERSION: "1.26.2"
-  IMAGE_NAME: ghcr.io/${{ github.repository }}
 
 jobs:
   test:
@@ -39,6 +38,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set Docker image name
+        run: echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+
       - name: Build Docker image
         run: docker build -t $IMAGE_NAME:${{ github.sha }} .
 
@@ -56,4 +58,3 @@ jobs:
           docker tag $IMAGE_NAME:${{ github.sha }} $IMAGE_NAME:latest
           docker push $IMAGE_NAME:${{ github.sha }}
           docker push $IMAGE_NAME:latest
-
